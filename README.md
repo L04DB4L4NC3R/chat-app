@@ -9,7 +9,7 @@
 
 - [ ] Socket.io
 - [ ] Facebook Oauth
-- [ ] Google Oauth
+- [X] Google Oauth
 - [ ] Database Caching
 - [X] Json web tokens
 - [X] Google materialize

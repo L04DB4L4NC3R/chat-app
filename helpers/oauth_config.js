@@ -5,10 +5,10 @@ const users = require("../db/model");
 const hash = require('./hash').hash
 
 
-passport.serializeUser((user,done)=>done(null,user.id));
+passport.serializeUser((user,done)=>done(null,user.name));
 
-passport.deserializeUser((user,done)=>{
-    users.findOne({name:user.id})
+passport.deserializeUser((name,done)=>{
+    users.findOne({name:name})
     .then((u)=>{
         done(null,u);
     }).catch(console.log);

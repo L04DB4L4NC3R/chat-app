@@ -14,7 +14,7 @@ router.get('/google/redirect',passport.authenticate('google'),(req,res)=>{
             if(err)
                 res.send(err);
             //res.send(token);
-            done(null,user);
+            res.send(token);
         });
     }
     else

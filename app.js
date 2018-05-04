@@ -1,5 +1,6 @@
 const express = require("express");
 const bp = require("body-parser");
+require("./db/connect");
 
 const app = express();
 

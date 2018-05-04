@@ -11,7 +11,7 @@
 - [ ] Facebook Oauth
 - [ ] Google Oauth
 - [ ] Database Caching
-- [ ] Json web tokens
+- [X] Json web tokens
 - [X] Google materialize
 - [ ] Azure hosting
 - [ ] Mocha

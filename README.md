@@ -12,7 +12,7 @@
 - [ ] Google Oauth
 - [ ] Database Caching
 - [ ] Json web tokens
-- [ ] Google materialize
+- [X] Google materialize
 - [ ] Azure hosting
 
 

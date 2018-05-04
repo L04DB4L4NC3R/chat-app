@@ -14,12 +14,13 @@
 - [ ] Json web tokens
 - [X] Google materialize
 - [ ] Azure hosting
+- [ ] Mocha
 
 
 
 
 
-## To run 
+## To run
 ```
 $ cd chat-app
 $ npm install
@@ -47,5 +48,3 @@ __Links__ : [See this link for reference](http://https://confluence.atlassian.co
 __An image__
 
 ![Alt text](https://cdn-images-1.medium.com/max/2000/1*aeWo6e6FC8InJwBl3TmpDw.jpeg)
-
-

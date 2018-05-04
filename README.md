@@ -38,7 +38,7 @@ __Bold text__
 
 
 
-__Links__ : [This link](http://https://confluence.atlassian.com/bitbucketserver/markdown-syntax-guide-776639995.html)
+__Links__ : [See this link for reference](http://https://confluence.atlassian.com/bitbucketserver/markdown-syntax-guide-776639995.html)
 
 
 

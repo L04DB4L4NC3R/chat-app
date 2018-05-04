@@ -14,9 +14,8 @@ app.use(bp.urlencoded({extended:false}));
 //static files middleware
 app.use(express.static('public'));
 
-app.get("/",(req,res)=>{
-    res.render('index');
-});
+//including routes
+app.use(require("./routes/login"));
 
 console.log("listening on port 3000");
 const server = app.listen(process.env.PORT || 3000 );

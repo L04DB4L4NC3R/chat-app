@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
 </head>
 <body>
   <nav class="white" role="navigation">
@@ -36,16 +37,16 @@
       </div> <br> <br> <br>
         <div class="row center">
             <form action="/" method="post">
-                <input type="text" name="name" id="" placeholder = "Name">
-                <input type="password" name="password" placeholder="Password" id="">
-                <input type="password" name="confirm" placeholder="Confirm password" id="">
+                <input type="text" name="name" id="" placeholder = "Name" required>
+                <input type="password" name="passwd" placeholder="Password" id="" required>
+                <input type="password" name="confirm" placeholder="Confirm password" id="" required>
                 <button class="btn waves-effect waves-light" type="submit" name="action">Signup
                   <i class="material-icons right">send</i>
                 </button>
             </form> <br> <br> <br>
             <form action="/" method="post">
-                <input type="text" name="name" id="" placeholder = "Name">
-                <input type="password" name="password" placeholder="Password" id="">
+                <input type="text" name="name" id="" placeholder = "Name" required>
+                <input type="password" name="passwd" placeholder="Password" id="" required>
                 <button class="btn waves-effect waves-light" type="submit" name="action">Login
                   <i class="material-icons right">send</i>
                 </button>
@@ -132,6 +133,13 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+
+      <script>
+          $(document).ready(()=>{
+              if("<%=message%>")
+                  alert("<%=message%>")
+          })
+      </script>
 
   </body>
 </html>

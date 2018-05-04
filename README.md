@@ -15,6 +15,7 @@
 - [X] Google materialize
 - [ ] Azure hosting
 - [ ] Mocha
+- [ ] Node mailer
 
 
 

@@ -3,6 +3,7 @@ const GoogleStrategy = require("passport-google-oauth20");
 const secret = require("../secret");
 const users = require("../db/model");
 const hash = require('./hash').hash
+const FacebookStrategy = require("passport-facebook");
 
 
 passport.serializeUser((user,done)=>done(null,user.name));
@@ -49,3 +50,35 @@ passport.use(
 
     })
 )
+
+
+
+
+//facebook oauth
+passport.use(new FacebookStrategy({
+    clientID:secret.fclientID,
+    clientSecret:secret.fclientSecret,
+    callbackURL:secret.fcallbackURL
+},function(accessToken,refreshToken,profile,done){
+
+    users.findOne({name:profile.id})
+    .then((u)=>{
+        if(u){
+            console.log("user exists");
+            done(null,u);
+        }
+        else{
+            hash(profile.id)
+            .then((p)=>{
+                new users({
+                    name:profile.id,
+                    passwd:p
+                }).save().then((us)=>{
+                    console.log("created new user");
+                    done(null,us);
+                }).catch(console.log);
+            }).catch(console.log);
+        }
+    }).catch(console.log);
+
+}));

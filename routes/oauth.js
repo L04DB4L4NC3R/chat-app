@@ -13,8 +13,10 @@ router.get('/google/redirect',passport.authenticate('google'),(req,res)=>{
         jwt.sign({user:req.user},secret.secretKey,{expiresIn:'2d'},(err,token)=>{
             if(err)
                 res.send(err);
-            //res.send(token);
-            res.send(token);
+
+            //TODO
+            res.header('Authorization','Bearer '+token);
+            res.redirect("/chat");//res.send(token)
         });
     }
     else
@@ -39,8 +41,10 @@ router.get('/facebook/redirect',passport.authenticate('facebook'),(req,res)=>{
         jwt.sign({user:req.user},secret.secretKey,{expiresIn:'2d'},(err,token)=>{
             if(err)
                 res.send(err);
-            //res.send(token);
-            res.send(token);
+            res.set({
+                'Authorization':'Bearer '+token
+            });
+            res.redirect("/chat");//res.send(token)
         });
     }
     else

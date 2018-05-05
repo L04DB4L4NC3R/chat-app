@@ -23,6 +23,7 @@ app.use(express.static('public'));
 //including routes
 app.use(require("./routes/login"));
 app.use("/auth",require("./routes/oauth"));
+app.use("/chat",require("./routes/chats"));
 
 console.log("listening on port 3000");
 const server = app.listen(process.env.PORT || 3000 );

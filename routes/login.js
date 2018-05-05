@@ -37,7 +37,10 @@ router.post("/", async (req,res)=>{
                         jwt.sign({user:o},secret.secretKey,{expiresIn:"2d"},(err,token)=>{
                             if(err)
                                 res.send(err)
-                            res.send(token);
+                            res.set({
+                                'Authorization':'Bearer '+token
+                            });
+                            res.redirect("/chat");//res.send(token)
                         });
                     })
                     .catch(console.log);
@@ -58,7 +61,10 @@ router.post("/", async (req,res)=>{
                             jwt.sign({user},secret.secretKey,(err,token)=>{
                                 if(err)
                                     res.send(err)
-                                res.send(token)
+                                res.set({
+                                    'Authorization':'Bearer '+token
+                                });
+                                res.redirect("/chat");//res.send(token)
                             })
                         }
                     else

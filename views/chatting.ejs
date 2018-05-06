@@ -12,10 +12,13 @@
     <button>send</button>
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         $(document).ready(()=>{
-            alert("hagga");
-        });
+            if(!localStorage.token){
+                localStorage.setItem('token',"<%=token%>");
+            }
+        })
     </script>
 
 </body>

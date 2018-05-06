@@ -1,10 +1,12 @@
 const express = require("express");
 const bp = require("body-parser");
 const passport = require('passport');
+const morgan = require('morgan');
 require("./db/connect");
 require("./helpers/oauth_config");
 
 const app = express();
+app.use(morgan('dev'));
 
 //templating language used: ejs
 app.set("view engine","ejs");

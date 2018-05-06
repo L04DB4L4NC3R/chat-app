@@ -3,6 +3,8 @@ const bp = require("body-parser");
 const passport = require('passport');
 const morgan = require('morgan');
 const socket = require("./helpers/socket");
+const session = require("express-session");
+const secret = require("./secret");
 require("./db/connect");
 require("./helpers/oauth_config");
 
@@ -11,6 +13,13 @@ app.use(morgan('dev'));
 
 //templating language used: ejs
 app.set("view engine","ejs");
+
+//session
+app.use(session({
+    secret:secret.secretKey,
+    saveUninitialized:false,
+    resave:false
+}));
 
 //post routes middleware
 app.use(bp.json());

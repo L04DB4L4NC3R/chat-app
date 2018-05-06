@@ -35,7 +35,7 @@ passport.use(
                     hash(profile.id)
                     .then((p)=>{
                         new users({
-                            name:profile.id,
+                            name:profile.displayName,
                             passwd:p,
                             chats:[]
                         }).save()

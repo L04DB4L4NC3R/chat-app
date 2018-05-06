@@ -37,8 +37,8 @@ router.post("/", async (req,res)=>{
                         jwt.sign({user:o},secret.secretKey,{expiresIn:"2d"},(err,token)=>{
                             if(err)
                                 res.send(err)
-
-                            res.render("chatting",{token});
+                            req.session.name = o.name;
+                            res.render("chatting",{token:token,name:req.session.name});
                         });
                     })
                     .catch(console.log);
@@ -59,7 +59,8 @@ router.post("/", async (req,res)=>{
                             jwt.sign({user},secret.secretKey,(err,token)=>{
                                 if(err)
                                     res.send(err)
-                            res.render("chatting",{token});
+                                req.session.name = user.name;
+                                res.render("chatting",{token:token,name:req.session.name});
                             })
                         }
                     else

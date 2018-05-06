@@ -71,7 +71,7 @@ passport.use(new FacebookStrategy({
             hash(profile.id)
             .then((p)=>{
                 new users({
-                    name:profile.id,
+                    name:profile.displayName,
                     passwd:p
                 }).save().then((us)=>{
                     console.log("created new user");

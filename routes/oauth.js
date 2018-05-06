@@ -15,7 +15,7 @@ router.get('/google/redirect',passport.authenticate('google'),(req,res)=>{
                 res.send(err);
 
             req.session.name = req.user.name;
-            res.render("chatting",{token:token,name:req.session.name});
+            res.render("chatting",{token:token,name:req.session.name} );
         });
     }
     else

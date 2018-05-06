@@ -25,12 +25,15 @@
             var socket = io.connect(window.location.href);
 
             $("#chat").on("keypress",()=>{
-                socket.emit("typing","blahhh blahhhh")
+                socket.emit("typing","<%=name%>")
             })
 
 
             $("#sb").on("click",()=>{
-                socket.emit("chat",$("#chat").val());
+                socket.emit("chat",{
+                    chat:$("#chat").val(),
+                    handle:"<%=name%>"
+                });
             });
 
 
@@ -40,8 +43,8 @@
             });
 
             socket.on("chat",(data)=>{
-                //$("#typing").html('');
-                $("#c").append(data);
+                $("#typing").html('');
+                $("#c").append("<p> <b> "+data.handle+" </b> <br>" + data.chat + "</p> <br><br>");
             });
 
 

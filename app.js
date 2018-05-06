@@ -2,6 +2,7 @@ const express = require("express");
 const bp = require("body-parser");
 const passport = require('passport');
 const morgan = require('morgan');
+const socket = require("./helpers/socket");
 require("./db/connect");
 require("./helpers/oauth_config");
 
@@ -29,3 +30,4 @@ app.use("/chat",require("./routes/chats"));
 
 console.log("listening on port 3000");
 const server = app.listen(process.env.PORT || 3000 );
+socket(server);

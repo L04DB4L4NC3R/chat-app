@@ -8,16 +8,43 @@
 </head>
 <body style="background-color:grey;text-align:center">
     <h1>Welcome</h1> <br><br>
-    <input type="text" name="chat" id="">
-    <button>send</button>
+    <input type="text" name="chat" id="chat">
+    <button id="sb">send</button>
+    <div id="typing"></div>
+    <div id="c"></div>
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
     <script>
         $(document).ready(()=>{
-            if(!localStorage.token){
-                localStorage.setItem('token',"<%=token%>");
-            }
+
+            localStorage.setItem('token',"<%=token%>");
+
+
+            var socket = io.connect(window.location.href);
+
+            $("#chat").on("keypress",()=>{
+                socket.emit("typing","blahhh blahhhh")
+            })
+
+
+            $("#sb").on("click",()=>{
+                socket.emit("chat",$("#chat").val());
+            });
+
+
+            //server return
+            socket.on("typing",(data)=>{
+                $("#typing").html(data);
+            });
+
+            socket.on("chat",(data)=>{
+                //$("#typing").html('');
+                $("#c").append(data);
+            });
+
+
         })
     </script>
 

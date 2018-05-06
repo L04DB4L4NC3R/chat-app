@@ -14,7 +14,7 @@
 - [X] Json web tokens
 - [X] Google materialize
 - [ ] Azure hosting
-- [ ] Mocha
+- [X] Mocha
 
 
 

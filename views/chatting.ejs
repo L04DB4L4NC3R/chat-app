@@ -1,17 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@Chat</title>
+	<title></title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+    height: 80%;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url('/images/chat.jpg');
+
+    /* Full height */
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
 </head>
-<body style="background-color:grey;text-align:center">
-    <h1>Welcome</h1> <br><br>
-    <input type="text" name="chat" id="chat">
-    <button id="sb">send</button>
-    <div id="typing"></div>
-    <div id="c"></div>
+<body>
+
+<div class="parallax" style="height: 500px;padding-top:80px;padding-left: 60px;font-weight: bold; font-size: 60px; color: white;">
+	<span style="background-color: #5cb0ed;border-radius: 20px; padding: 15px;">Welcome to your </span><br>
+	                <img src="../../images/chat.png" style="margin-left:  450px;"><br>
+	            <span style="background-color: #5cb0ed;border-radius: 20px; padding: 15px;margin-left: 900px;">center!!!<span></div>
+<div class="parallax" style="height: 1000px">
+	<div style="padding: 20px;margin-left:90px;margin-right: 120px; border-radius: 5px;border: 15px groove black ;font-size: 30px; background-color: grey;">
+Here comes your chat....
+<br><br><br>
+->yo!!!
+</div>
+</div>
+
+
+
+<div class="parallax"></div>
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

@@ -10,10 +10,8 @@
 - [X] Socket.io
 - [X] Facebook Oauth
 - [X] Google Oauth
-- [ ] Database Caching
 - [X] Json web tokens
 - [X] Google materialize
-- [ ] Azure hosting
 - [X] Mocha
 - [X] Docker
 

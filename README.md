@@ -7,7 +7,7 @@
 
 *Concepts used*
 
-- [X] Socket.io
+- [ ] Socket.io
 - [X] Facebook Oauth
 - [X] Google Oauth
 - [ ] Database Caching
@@ -15,6 +15,7 @@
 - [X] Google materialize
 - [ ] Azure hosting
 - [X] Mocha
+- [X] Docker
 
 
 

@@ -4,11 +4,13 @@
   "description": "",
   "main": "test/test.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "nodemon app"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^2.0.1",
     "body-parser": "^1.18.2",
     "dotenv": "^6.0.0",
     "ejs": "^2.5.9",
@@ -17,10 +19,12 @@
     "jsonwebtoken": "^8.2.1",
     "mocha": "^5.1.1",
     "mongoose": "^5.0.17",
+    "morgan": "^1.9.0",
     "nodemon": "^1.17.5",
     "passport": "^0.4.0",
     "passport-facebook": "^2.1.1",
     "passport-google-oauth20": "^1.0.0",
+    "redis": "^2.8.0",
     "socket.io": "^2.1.0"
   }
 }

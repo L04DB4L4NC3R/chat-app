@@ -9,36 +9,23 @@ body, html {
     height: 80%;
 }
 
-.parallax {
-    /* The image used */
-    background-image: url('/images/chat.jpg');
-
-    /* Full height */
-    height: 100%;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 </style>
 </head>
 <body>
 
-<div class="parallax" style="height: 500px;padding-top:80px;padding-left: 60px;font-weight: bold; font-size: 60px; color: white;">
-	<span style="background-color: #5cb0ed;border-radius: 20px; padding: 15px;">Welcome to your </span><br>
-	                <img src="../../images/chat.png" style="margin-left:  450px;"><br>
-	            <span style="background-color: #5cb0ed;border-radius: 20px; padding: 15px;margin-left: 900px;">center!!!<span></div>
-<div class="parallax" style="height: 1000px">
-	<div style="padding: 20px;margin-left:90px;margin-right: 120px; border-radius: 5px;border: 15px groove black ;font-size: 30px; background-color: grey;">
-Here comes your chat....
-<br><br><br>
-->yo!!!
-</div>
-</div>
+<div class="parallax" style="height: 500%;background-color:orange;padding-top:80px;padding-left: 60px;font-weight: bold; font-size: 60px; color: white;">
+<center>	<span style="background-color: #5cb0ed;border-radius: 20px; padding: 15px;">Welcome to your chat center </span></center><br>
 
+	<div id="typing"></div>
 
+	<center><input type="text" name="input" id="chat" placeholder="type here"></center>
+	<center><button style="height:25px" class="btn btn-default" id="sb">Submit</button></center>
+	<br>
+
+	<!-- <div style="padding: 20px;margin-left:90px;margin-right: 120px; border-radius: 5px;border: 15px groove black ;font-size: 30px; background-color: grey;height:250px"> -->
+<div id="c"></div>
+
+</div>
 
 <div class="parallax"></div>
 
@@ -73,7 +60,7 @@ Here comes your chat....
 
             socket.on("chat",(data)=>{
                 $("#typing").html('');
-                $("#c").append("<p> <b> "+data.handle+" </b> <br>" + data.chat + "</p> <br><br>");
+                $("#c").append('<div style="padding: 20px;margin-left:90px;margin-right: 120px; border-radius: 5px;border: 15px groove black ;font-size: 30px; background-color: grey;height:100px">'+  "<p> <b> "+data.handle+" </b> <br>" + data.chat + "</p> <br><br>"+'</div>');
             });
 
 

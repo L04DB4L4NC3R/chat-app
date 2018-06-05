@@ -23,6 +23,7 @@ router.get('/google/redirect',passport.authenticate('google'),(req,res)=>{
 
 router.get("/logout",(req,res)=>{
     req.logout();
+    req.session.name="";
     res.redirect('/');
 });
 

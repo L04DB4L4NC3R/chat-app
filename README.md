@@ -7,7 +7,7 @@
 
 *Concepts used*
 
-- [ ] Socket.io
+- [X] Socket.io
 - [X] Facebook Oauth
 - [X] Google Oauth
 - [ ] Database Caching

@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
-const secret = require('../secret');
 
 router.get('/google',passport.authenticate('google',{
     scope:['profile']
@@ -10,7 +9,7 @@ router.get('/google',passport.authenticate('google',{
 
 router.get('/google/redirect',passport.authenticate('google'),(req,res)=>{
     if(req.user){
-        jwt.sign({user:req.user},secret.secretKey,{expiresIn:'2d'},(err,token)=>{
+        jwt.sign({user:req.user},process.env.SECRET_KEY,{expiresIn:'2d'},(err,token)=>{
             if(err)
                 res.send(err);
 
@@ -37,7 +36,7 @@ router.get('/facebook',passport.authenticate('facebook',{
 
 router.get('/facebook/redirect',passport.authenticate('facebook'),(req,res)=>{
     if(req.user){
-        jwt.sign({user:req.user},secret.secretKey,{expiresIn:'2d'},(err,token)=>{
+        jwt.sign({user:req.user},process.env.SECRET_KEY,{expiresIn:'2d'},(err,token)=>{
             if(err)
                 res.send(err);
 

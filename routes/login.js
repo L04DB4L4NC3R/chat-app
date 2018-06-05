@@ -3,7 +3,6 @@ const users = require("../db/model");
 const jwt = require("jsonwebtoken");
 const hash = require("../helpers/hash").hash;
 const compare = require("../helpers/hash").compare;
-const secret = require("../secret");
 
 router.get("/",(req,res)=>{
     res.render('index',{message:""});
@@ -34,7 +33,7 @@ router.post("/", async (req,res)=>{
 
                     obj.save()
                     .then((o)=>{
-                        jwt.sign({user:o},secret.secretKey,{expiresIn:"2d"},(err,token)=>{
+                        jwt.sign({user:o},process.env.SECRET_KEY,{expiresIn:"2d"},(err,token)=>{
                             if(err)
                                 res.send(err)
                             req.session.name = o.name;
@@ -56,7 +55,7 @@ router.post("/", async (req,res)=>{
                 .then((bool)=>{
                     if(user && bool )
                         {
-                            jwt.sign({user},secret.secretKey,(err,token)=>{
+                            jwt.sign({user},process.env.SECRET_KEY,(err,token)=>{
                                 if(err)
                                     res.send(err)
                                 req.session.name = user.name;

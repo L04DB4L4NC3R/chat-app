@@ -4,7 +4,7 @@ const passport = require('passport');
 const morgan = require('morgan');
 const socket = require("./helpers/socket");
 const session = require("express-session");
-const secret = require("./secret");
+require("dotenv").config();
 require("./db/connect");
 require("./helpers/oauth_config");
 
@@ -16,7 +16,7 @@ app.set("view engine","ejs");
 
 //session
 app.use(session({
-    secret:secret.secretKey,
+    secret:process.env.SECRET_KEY,
     saveUninitialized:false,
     resave:false
 }));

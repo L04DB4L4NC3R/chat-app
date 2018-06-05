@@ -1,13 +1,12 @@
 const bcrypt = require("bcrypt");
 const util = require("util");
-const secret = require("../secret");
 
 bcrypt.hash = util.promisify(bcrypt.hash);
 bcrypt.compare = util.promisify(bcrypt.compare);
 
 module.exports.hash = function hash(passwd){
     return new Promise((resolve,reject)=>{
-        bcrypt.hash(passwd,secret.salt)
+        bcrypt.hash(passwd,process.env.SALT)
         .then(resolve)
         .catch(reject);
     });

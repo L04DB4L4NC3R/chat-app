@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect(require("../secret").mongoURL);
+mongoose.connect(process.env.MONGO_URL);
 
 mongoose.connection
 .once("open",()=>console.log("Connection to mongoDB is open"))

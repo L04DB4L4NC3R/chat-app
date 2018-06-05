@@ -1,6 +1,5 @@
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20");
-const secret = require("../secret");
 const users = require("../db/model");
 const hash = require('./hash').hash
 const FacebookStrategy = require("passport-facebook");
@@ -19,9 +18,9 @@ passport.deserializeUser((name,done)=>{
 
 passport.use(
     new GoogleStrategy({
-        clientID:secret.gclientID,
-        clientSecret:secret.gclientSecret,
-        callbackURL:secret.gcallbackURL
+        clientID:process.env.GCLIENT_ID,
+        clientSecret:process.env.GCLIENT_SECRET,
+        callbackURL:process.env.GCALLBACK_URL
     }, function(accessToken,refreshToken,profile,done){
 
             users.findOne({name:profile.id})
@@ -56,9 +55,9 @@ passport.use(
 
 //facebook oauth
 passport.use(new FacebookStrategy({
-    clientID:secret.fclientID,
-    clientSecret:secret.fclientSecret,
-    callbackURL:secret.fcallbackURL
+    clientID:process.env.FCLIENT_ID,
+    clientSecret:process.env.FCLIENT_SECRET,
+    callbackURL:process.env.FCALLBACK_URL
 },function(accessToken,refreshToken,profile,done){
 
     users.findOne({name:profile.id})

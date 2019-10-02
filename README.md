@@ -29,15 +29,6 @@ $ node app
 
 
 
-~~strikethrough text~~
-*Italic text*
-_More italic text_
-__Bold text__
-
-
-
-
-
 __Links__ : [See this link for reference](http://https://confluence.atlassian.com/bitbucketserver/markdown-syntax-guide-776639995.html)
 
 

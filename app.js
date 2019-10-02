@@ -37,6 +37,6 @@ app.use(require("./routes/login"));
 app.use("/auth",require("./routes/oauth"));
 app.use("/chat",require("./routes/chats"));
 
-console.log("listening on port 3000");
+console.log("listening...");
 const server = app.listen(process.env.PORT || 3000 );
 socket(server);
